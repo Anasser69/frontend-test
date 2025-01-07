@@ -1,0 +1,148 @@
+#root {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.app {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Task Form Styles */
+form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+input[type="text"],
+select {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input[type="text"] {
+  flex: 1;
+}
+
+/* Task Filter Styles */
+.task-filter {
+  margin-bottom: 2rem;
+  text-align: right;
+}
+
+/* Task List Styles */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Task Item Styles */
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.task-item:hover {
+  transform: translateX(5px);
+}
+
+/* Remove checkbox styles */
+.task-item input[type="checkbox"] {
+  display: none;
+}
+
+.task-item span {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.priority {
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.priority:has(+ span:contains("High")) {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.priority:has(+ span:contains("Medium")) {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.priority:has(+ span:contains("Low")) {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Button variants */
+button[type="submit"],
+button:contains("Save") {
+  background-color: #3b82f6;
+  color: white;
+}
+
+button:contains("Cancel") {
+  background-color: #6b7280;
+  color: white;
+}
+
+button:contains("Delete") {
+  background-color: #ef4444;
+  color: white;
+}
+
+button:contains("Edit") {
+  background-color: #10b981;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  form {
+    flex-direction: column;
+  }
+
+  .task-item {
+    flex-wrap: wrap;
+  }
+
+  .task-item button {
+    flex: 1;
+  }
+}
